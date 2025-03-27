@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Playwright specific
+playwright-report/
+trace.zip
+*.png
+*.mp4
+
+# Cucumber specific
+reports/
+cucumber_report.json
+
+# TypeScript
+*.tsbuildinfo
