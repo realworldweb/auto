@@ -11,7 +11,7 @@ export const TradeManager = {
 		return trades.get(id) || null;
 	},
 
-	getAllTrades: (): Trade[] => {
+	getAllTrades: (): Array<Trade> => {
 		return Array.from(trades.values());
 	},
 
