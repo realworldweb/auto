@@ -20,40 +20,6 @@ export const userSessionManager = {
 	},
 
 	getActiveUser: (): UserSession | null => activeUser ?? null,
-
-	getUserPage: (alias: string): Page | null => {
-		const session = sessions.get(alias);
-		return session ? session.page : null;
-	},
-
-	awaitLogin: async (
-		alias: string,
-		loginTask: (page: Page) => Promise<void>
-	): Promise<void> => {
-		const session = sessions.get(alias);
-		if (!session) {
-			throw new Error(`User with alias "${alias}" does not exist.`);
-		}
-		await loginTask(session.page);
-	},
-
-	runTasksForUsers: async (
-		aliases: string[],
-		taskMap: Map<string, (page: Page) => Promise<void>>
-	): Promise<void> => {
-		const tasks = aliases.map(async (alias) => {
-			const session = sessions.get(alias);
-			if (!session) {
-				throw new Error(`User with alias "${alias}" does not exist.`);
-			}
-			const task = taskMap.get(alias);
-			if (!task) {
-				throw new Error(`No task found for user with alias "${alias}".`);
-			}
-			await task(session.page);
-		});
-		await Promise.all(tasks);
-	},
 };
 
 export const createSession = async (alias: string): Promise<UserSession> => {
