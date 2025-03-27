@@ -1,0 +1,26 @@
+{
+	"name": "playwright-cucumber-ts",
+	"version": "1.0.0",
+	"description": "A TypeScript project using Playwright and Cucumber.js for BDD testing.",
+	"main": "src/index.ts",
+	"scripts": {
+		"test": "cucumber-js",
+		"test:watch": "cucumber-js --watch"
+	},
+	"dependencies": {
+		"playwright": "^1.0.0",
+		"@cucumber/cucumber": "^9.0.0"
+	},
+	"devDependencies": {
+		"@types/cucumber": "^7.0.0",
+		"typescript": "^4.0.0"
+	},
+	"keywords": [
+		"playwright",
+		"cucumber",
+		"bdd",
+		"testing"
+	],
+	"author": "Your Name",
+	"license": "MIT"
+}
